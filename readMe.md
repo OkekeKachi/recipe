@@ -2,7 +2,7 @@
 echo "# recipe" >> README.md
 git init
 git add README.md
-cdgit commit -m "first commit"
+git commit -m "first commit"
 gieet branch -M main
 git remote add origin https://github.com/OkekeKachi/recipe.git
 git push -u origin main

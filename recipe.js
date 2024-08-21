@@ -44,7 +44,7 @@ function checkMidnight() {
 }
 checkMidnight();
 
-// if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/recipe.html') {
+// if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/index.html') {
 //   query = "bread";
 // } else if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/breakfast.html') {
 //   query = "chicken";
@@ -81,7 +81,7 @@ axios.get(apiUrl)
       let recipeProperties = { recipe, ingredients, Diet, healthLabel, label, totalWeight, price };
       arr.push(recipeProperties)
     }
-    if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/dinner.html') {
+    if (currentPage.includes("dinner.html")) {
       text = "salad";
       for (let i = 0; i < (arr.length) - 1; i++) {
         const parentDiv = document.getElementById("row")
@@ -127,7 +127,7 @@ axios.get(apiUrl)
         breakfast.push(recipeProperties2);
       }
       console.log(res.data)
-      if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/breakfast.html') {
+      if (currentPage.includes("breakfast.html")) {
         text = "chicken";
         console.log("heyyy")
         for (let i = 0; i < breakfast.length - 1; i++) {
@@ -176,7 +176,7 @@ axios.get(apiUrl)
         lunch.push(recipeProperties3);
       }
       console.log(res.data)
-      if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/lunch.html') {
+      if (currentPage.includes("lunch.html")) {
         text = "salad";
         for (let i = 0; i < (lunch.length) - 1; i++) {
           const parentDiv = document.getElementById("row")
@@ -207,7 +207,7 @@ axios.get(apiUrl)
           parentDiv.appendChild(div)
           // image[9 + i].src = lunch[i].recipe;
         }
-      } else if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/recipe.html') {
+      } else if (currentPage.includes("index.html")) {
 
         for (let i = 0; i < 3; i++) {
           const parentDiv = document.getElementById("row");
@@ -294,7 +294,7 @@ axios.get(apiUrl)
           parentDiv2.appendChild(div2)
           parentDiv3.appendChild(div3)
         }
-      }else  if (currentPage === '/C:/Users/Student/Documents/Desktop/PROJECTS/recipe/view.html') {
+      } else if (currentPage.includes("view.html")) {
         food = document.getElementById("food");
         diets = document.getElementById("diets");        
         const listElement = document.getElementById('diet-list');
