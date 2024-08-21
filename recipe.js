@@ -375,7 +375,7 @@ axios.get(apiUrl)
 
 // console.log(breakfast)
 function getIngredients(i, queryView) {
-  window.location.href = "file:///C:/Users/Student/Documents/Desktop/PROJECTS/recipe/view.html";
+  window.location.href = "https://okekekachi.github.io/recipe/view.html";
   localStorage.setItem('queryyy', queryView);
   localStorage.setItem('i', i);
   localStorage.setItem('arr', arr);
