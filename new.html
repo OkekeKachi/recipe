@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Array to List</title>
+</head>
+
+<body>
+<form action="https://formspree.io/f/xkgwbgvp" id="myForm" method="POST">
+    <h4 class="heading"></h4>
+    <span class="error red-text text-darken-4"></span>
+    <div class="row">
+        <div class="input-field col l7">
+            <input required id="text" name="name" type="text" class="validate">
+            <label for="text">Full name</label>
+        </div>
+        <div class="input-field col l5">
+            <input required id="email" name="phone" type="email" pattern="[a-z0-9._%+-]+@gmail\.com" required
+                class="validate">
+            <label for="email">Email</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col l7">
+            <input required id="delivery" name="delivery" type="text" class="validate">
+            <label for="delivery">Delivery Address</label>
+        </div>
+        <div class="input-field col l5">
+            <input required id="phone" name="phone" type="tel" class="validate">
+            <label for="phone">Phone Number</label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="input-field col l12" align="center">
+            <input required type="number" id="quantity" name="quantity" class="materialize-textarea"></input>
+            <label for="quantity">Quantity</label>
+            <!-- <button class="btn orange darken-4" >Send</button> -->
+        </div>
+    </div>
+
+    <div align="center">
+
+        <input type="submit" class="btn-flat orange darken-4" id="generateReceiptButton"
+            class=" waves-effect waves-green ">
+    </div>
+
+</form>
+
+
+    <ul id="diet-list"></ul>
+    
+    <script>
+        const diets = ['Keto-Friendly', 'Pescatarian', 'Dairy-Free', 'Gluten-Free', 'Wheat-Free'];
+        const listElement = document.getElementById('diet-list');
+
+        diets.forEach(diet => {
+            const li = document.createElement('li');
+            li.textContent = diet;
+            listElement.appendChild(li);
+        });
+    </script>
+
+</body>
+
+</html>

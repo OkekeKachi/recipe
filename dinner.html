@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/materialize.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.2.7/vfs_fonts.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        .welcome {
+            font-size: larger;
+            text-align: justify;
+        }
+
+        .collapsibles {
+            text-align: justify;
+        }
+
+        .logo {
+            padding-left: 40px;
+
+        }
+
+        .card-head {
+            font-size: 30px;
+        }
+
+        .foot {
+            padding: 5px;
+        }
+
+        .foothead {
+            font-size: 30px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <!-- navbar -->
+        <div class="navbar-fixed">
+            <nav class="nav-wrapper white">
+                <div class="container navbar">
+                    <a href="recipe.html" class="brand-logo">
+                        <img src="img/logo.png" alt="" width="150px">
+                    </a>
+                    <a href="#mobile-links" class="sidenav-trigger">
+                        <i class="material-icons orange-text text-darken-4">menu</i>
+                    </a>
+                    <ul class="right hide-on-med-and-down">
+                        <li><a href="recipe.html" class=" orange-text text-darken-4 scrollspy"><strong>Home</strong>
+                            </a></li>
+                        <li><a class="orange-text text-darken-4 dropdown-trigger" href="#!"
+                                data-target="dropdown1"><strong>Meals</strong> <i
+                                    class="material-icons right ">arrow_drop_down</i></a></li>
+                        <li><a href="contact.html" class=" orange-text text-darken-4 "><strong>Contact</strong>
+                            </a></li>
+                        <li><a href="about.html" class=" orange-text text-darken-4 "><strong>About</strong>
+                            </a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+        <ul id="dropdown1" class="dropdown-content">
+            <li><a href="breakfast.html" class=" orange-text text-darken-4 scrollspy"><strong>Breakfast</strong>
+                </a>
+            </li>
+            <li><a href="lunch.html" class=" orange-text text-darken-4 scrollspy"><strong>Lunch</strong>
+                </a>
+            </li>
+            <li><a href="dinner.html" class=" orange-text text-darken-4 scrollspy"><strong>Dinner</strong>
+                </a></li>
+        </ul>
+        <ul class="sidenav orange darken-4" id="mobile-links">
+            <li><a href="recipe.html" class="white-text scrollspy">Home</a></li>
+            <li><a href="breakfast.html" class="white-text scrollspy">Breakfast</a></li>
+            <li><a href="lunch.html" class="white-text scrollspy">Lunch</a></li>
+            <li><a href="dinner.html" class="white-text scrollspy">Dinner</a></li>
+            <li><a href="contact.html" class="white-text scrollspy">Contact us</a></li>
+            <li><a href="about.html" class="white-text scrollspy">About us</a></li>
+        </ul>
+    </header>
+    <main>
+        <div class="row container" id="row">
+            <h1 class="orange-text text-darken-4">Dinner</h1>
+        </div>
+    </main>
+        <!-- Modal Structure -->
+        <div id="demo-modal" class="modal">
+        
+            <div class="modal-content">
+                <form action="https://formspree.io/f/xkgwbgvp" id="myForm" method="POST">
+                    <h4 class="heading"></h4>
+                    <span class="error red-text text-darken-4"></span>
+                    <div class="row">
+                        <div class="input-field col l7">
+                            <input required id="text" name="name" type="text" class="validate">
+                            <label for="text">Full name</label>
+                        </div>
+                        <div class="input-field col l5">
+                            <input required id="email" name="phone" type="email" pattern="[a-z0-9._%+-]+@gmail\.com" required
+                                class="validate">
+                            <label for="email">Email</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col l7">
+                            <input required id="delivery" name="delivery" type="text" class="validate">
+                            <label for="delivery">Delivery Address</label>
+                        </div>
+                        <div class="input-field col l5">
+                            <input required id="phone" name="phone" type="tel" class="validate">
+                            <label for="phone">Phone Number</label>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="input-field col l12" align="center">
+                            <input required type="number" id="quantity" name="quantity" class="materialize-textarea"></input>
+                            <label for="quantity">Quantity</label>
+                            <!-- <button class="btn orange darken-4" >Send</button> -->
+                        </div>
+                    </div>
+        
+                    <div align="center">
+        
+                        <input type="submit" class="btn-flat orange darken-4" id="generateReceiptButton"
+                            class=" waves-effect waves-green ">
+                    </div>
+        
+                </form>
+            </div>
+            <div class="modal-footer">
+                <!-- <a href="#!" class="modal-close waves-effect waves-green btn-flat">Agree</a> -->
+            </div>
+        </div>
+
+    <footer>
+        <div class="black">
+            <div class="container">
+                <div class="row">
+                    <div class="col s4 l4">
+                        <img src="img/logo.png" width="50%" style="padding-top: 20px;" class="hide-on-med-and-down">
+                        <img src="img/logo.png" width="100%" style="padding-top: 20px;" class=" hide-on-large-only">
+                        <p class="white-text hide-on-med-and-down">Join our foodie community and never miss a recipe! Follow
+                            us on social media for daily inspiration, tips, and exclusive
+                            content. Sign up for our newsletter to get the latest recipes delivered straight to your inbox.
+                        </p>
+                        <p class=" hide-on-large-only white-text">Join our foodie community and never miss a recipe! Follow
+                            us on social media for daily inspiration and exclusive
+                            content.</p>
+                        <a href="https://www.facebook.com/profile.php?id=100067709473839" class="icons" target="_blank">
+                            <img src="https://th.bing.com/th/id/R.51ae405e1b464603ee8ac65599eb5c95?rik=WR5BGUHuMfpD9A&pid=ImgRaw&r=0"
+                                alt="Facebook">
+                        </a>
+                        <a href="https://x.com/OkekeKachi2?t=NcIkLqWpdWphA1Ki5VQzbA&s=09" class="icons" target="_blank">
+                            <img src="https://th.bing.com/th/id/OIP.kYsg3AqnFuCf0KWPndjnIAHaEn?rs=1&pid=ImgDetMain"
+                                alt="Twitter">
+                        </a>
+                        <a href="https://www.instagram.com/felixis_07?igsh=dzBwODF1Mm5uc2F5" class="icons" target="_blank">
+                            <img src="https://th.bing.com/th/id/OIP.2918gwC_S-Cz4jv0RaubXwAAAA?rs=1&pid=ImgDetMain"
+                                alt="Instagram">
+                        </a>
+                        <a href="https://wa.me/07039233521" class="icons" target="_blank">
+                            <img src="https://th.bing.com/th/id/R.42ed09981b892f36a354b7e86fac9f17?rik=a2k114RgvKzbuw&pid=ImgRaw&r=0"
+                                alt="WhatsApp">
+                        </a>
+                    </div>
+                    <div class="col l4 s4"></div>
+                    <div class="col l4 s4">
+                        <br>
+                        <p class="orange-text text-darken-4 foothead">Quick Links</p>
+                        <p class="white-text"><a class="scrollspy" href="#Top">Back to Top </a><br><a class="anchor"
+                                href="breakfast.html"> Breakfast </a><br><a class="anchor" href="lunch.html">Lunch</a><br><a
+                                class="anchor" href="dinner.html">Dinner </a> <br><a class="anchor"
+                                href="contact.html">Contact us</a><br><a class="anchor" href="about.html">About us</a></p>
+                    </div>
+                </div>
+                <hr><br>
+                <div class="row">
+                    <div class="col l4">
+    
+                        <button class="orange darken-4"><a href="tel:09123231279"><i
+                                    class="white-text material-icons ">place</i></a></button><a href="about.html"><span
+                                class="white-text hide-on-med-and-down"> Address</span></a>
+                    </div>
+                    <div class="col l4">
+                        <button class="orange darken-4"><a href="mailto:okekefelix51@gmail.com"><i
+                                    class="white-text material-icons">mail_outline</i></a></button><a
+                            href="mailto:okekefelix51@gmail.com"><span class="white-text hide-on-med-and-down">
+                                Mail
+                                us</span></a>
+                    </div>
+                    <div class="col l4">
+                        <button class="orange darken-4"><a href="tel:09123231279"><i
+                                    class="white-text material-icons ">call</i></a></button><a href="tel:09123231279"><span
+                                class="white-text hide-on-med-and-down"> Telephone</span></a>
+                    </div>
+                </div>
+            </div>
+            <div class="orange darken-4 center-align foot white-text">
+                <h6> &COPY; 2024 Recipe.com | FELIXIS-TECH</h6>
+            </div>
+        </div>
+    
+        <div class="fixed-action-btn ">
+            <a class="btn-floating btn-large orange darken-4 pulse">
+                <i class="large material-icons">message</i>
+            </a>
+            <ul>
+                <li>
+                    <a class="btn-floating red tooltipped" data-position="left" data-tooltip="Create a Chart">
+                        <i class="material-icons">insert_chart</i>
+                    </a>
+                </li>
+                <li><a class="btn-floating yellow darken-1"><i class="material-icons">format_quote</i></a></li>
+                <li><a class="btn-floating orange"><i class="material-icons">publish</i></a></li>
+                <li><a class="btn-floating orange"><i class="material-icons">attach_file</i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+</body>
+
+</html>
+<script src="recipe.js"></script>
+<script src="js/jQuery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/2.1.2/sweetalert.min.js"
+    integrity="sha512-AA1Bzp5Q0K1KanKKmvN/4d3IRKVlv9PYgwFPvm32nPO6QS8yH1HO7LbgB1pgiOxPtfeg5zEn2ba64MUcqJx6CA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/materialize.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var elems = document.querySelectorAll('.modal');
+        var instances = M.Modal.init(elems);
+    });
+    $(document).ready(function () {
+        $(".dropdown-trigger").dropdown();
+        $('.slider').slider()
+        $('.sidenav').sidenav()
+        $('.collapsible').collapsible()
+        $('.parallax').parallax()
+        $('.materialboxed').materialbox()
+        $('.scrollspy').scrollSpy();
+        $('.fixed-action-btn').floatingActionButton();
+        $('.tooltipped').tooltip();
+    })
+</script>
