@@ -4,7 +4,7 @@ const from = 0;
 const to = 10;
 const diet = 'high-protein';
 let currentPage = window.location.pathname;
-query = ["chicken", "bread","salad", "fish"  ];
+query = ["chicken", "bread","salad", "fish","soup", "cake"  ];
 
 function shuffle(item) {
     queryArr = item.sort(() => Math.random() - 0.5);
