@@ -319,7 +319,7 @@ axios.get(apiUrl)
           
           nutrients.innerText = `${arr[i].totalWeight}`;
           text.innerText = `${arr[i].label}`;
-          viewDiv.innerHTML = `<button onclick="generateName('${arr[i].label}',${arr[i].price})" class="custom-button btn">  <!-- Trigger Button -->
+          viewDiv.innerHTML = `<button onclick="generateName('${arr[i].label}',${arr[i].price})" class="custom-button btn pulse">  <!-- Trigger Button -->
             <a class="modal-trigger white-text" href="#demo-modal">Order now</a></button>`          
         } else if (queryView == query[1]) {
           food.src = breakfast[i].recipe;
@@ -337,7 +337,7 @@ axios.get(apiUrl)
           nutrients.innerText = `${breakfast[i].totalWeight}`;
           text.innerText = `${breakfast[i].label}`;
           
-          viewDiv.innerHTML = `<button onclick="generateName('${breakfast[i].label}',${breakfast[i].price})" class="custom-button btn">  <!-- Trigger Button -->
+          viewDiv.innerHTML = `<button onclick="generateName('${breakfast[i].label}',${breakfast[i].price})" class="custom-button btn pulse pulse">  <!-- Trigger Button -->
             <a class="modal-trigger white-text" href="#demo-modal">Order now</a></button>`
 
         } else if (queryView == query[2]) {
@@ -357,7 +357,7 @@ axios.get(apiUrl)
           nutrients.innerText = `${lunch[i].totalWeight}`;
           text.innerText = `${lunch[i].label}`;
           
-          viewDiv.innerHTML = `<button onclick="generateName('${lunch[i].label}',${lunch[i].price})" class="custom-button btn">  <!-- Trigger Button -->
+          viewDiv.innerHTML = `<button onclick="generateName('${lunch[i].label}',${lunch[i].price})" class="custom-button btn pulse">  <!-- Trigger Button -->
             <a class="modal-trigger white-text" href="#demo-modal">Order now</a></button>`
           
         }
