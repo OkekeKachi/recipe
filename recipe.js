@@ -207,7 +207,7 @@ axios.get(apiUrl)
           parentDiv.appendChild(div)
           // image[9 + i].src = lunch[i].recipe;
         }
-      } else if (currentPage ==="https://okekekachi.github.io/recipe/" && currentPage.includes("index.html")) {
+      } else if (currentPage ==="https://okekekachi.github.io/recipe/" || currentPage.includes("index.html")) {
 
         for (let i = 0; i < 3; i++) {
           const parentDiv = document.getElementById("row");
